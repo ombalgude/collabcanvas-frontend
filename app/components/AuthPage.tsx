@@ -1,6 +1,6 @@
 "use client";
 
-import { Input } from "../../../collabcanvas-frontend/ui/src/Input";
+import { Input } from "@ui/Input";
 import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";

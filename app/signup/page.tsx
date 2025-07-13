@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Input } from "../../../collabcanvas-frontend/ui/src/Input";
+import { Input } from "@ui/Input";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";

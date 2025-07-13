@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "../../../collabcanvas-frontend/ui/src/Button";
+import { Button } from "@ui/Button";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
