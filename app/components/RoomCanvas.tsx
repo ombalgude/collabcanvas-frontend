@@ -15,13 +15,27 @@ export function RoomCanvas({ roomId }: { roomId: string }) {
 
     const ws = new WebSocket(`${WS_URL}?token=${token}`);
 
+    // This handler runs when the connection is successfully established.
     ws.onopen = () => {
-      console.log("WebSocket connected");
+      console.log("WebSocket connected. Initializing room.");
       setSocket(ws);
+      
+      // --- CHANGE APPLIED HERE ---
+      // This component is now responsible for all initial setup messages.
+
+      // 1. Announce that we are joining the room.
       ws.send(
         JSON.stringify({
           type: "join_room",
           roomId,
+        })
+      );
+
+      // 2. Proactively request the full drawing history for the room.
+      ws.send(
+        JSON.stringify({
+            type: "request_canvas_history",
+            roomId: roomId,
         })
       );
     };
@@ -32,6 +46,7 @@ export function RoomCanvas({ roomId }: { roomId: string }) {
 
     ws.onclose = () => {
       console.warn("WebSocket connection closed.");
+      setSocket(null); 
     };
 
     return () => {
@@ -40,7 +55,7 @@ export function RoomCanvas({ roomId }: { roomId: string }) {
   }, [roomId]);
 
   if (!socket) {
-    return <div>Connecting to server...</div>;
+    return <div>Connecting to drawing server...</div>;
   }
 
   return (
