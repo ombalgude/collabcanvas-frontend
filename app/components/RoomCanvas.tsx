@@ -59,7 +59,7 @@ export function RoomCanvas({ roomId }: { roomId: string }) {
   }
 
   return (
-    <div>
+    <div className="flex justify-center items-center h-screen w-screen bg-gray-900">
       <Canvas roomId={roomId} socket={socket} />
     </div>
   );

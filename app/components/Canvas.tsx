@@ -32,12 +32,7 @@ export function Canvas({
   }, [canvasRef, roomId, socket]);
 
   return (
-    <div
-      style={{
-        height: "100vh",
-        overflow: "hidden",
-      }}
-    >
+    <div className="h-full w-full overflow-hidden">
       <canvas
         ref={canvasRef}
         width={window.innerWidth}
@@ -57,14 +52,8 @@ function Topbar({
   setselectedTool: (tool: Tool) => void;
 }) {
   return (
-    <div
-      style={{
-        position: "fixed",
-        top: 10,
-        left: 10,
-      }}
-    >
-      <div className="flex gap-2 m-2">
+    <div className="fixed top-4 left-1/2 -translate-x-1/2 sm:top-10 sm:left-10 sm:translate-x-0">
+      <div className="flex gap-2 p-2 bg-gray-800 rounded-lg shadow-lg">
         <IconButton
           onClick={() => {
             setselectedTool("pencil");

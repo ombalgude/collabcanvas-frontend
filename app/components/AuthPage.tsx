@@ -40,8 +40,8 @@ export function AuthPage({ isSignin }: { isSignin: boolean }) {
   };
 
   return (
-    <div className="w-screen h-screen flex justify-center items-center bg-black text-white">
-      <div className="p-4 rounded-lg bg-gray-900 space-y-4 w-80">
+    <div className="w-screen h-screen flex justify-center items-center bg-black text-white px-4">
+      <div className="p-4 rounded-lg bg-gray-900 space-y-4 w-full sm:w-96 md:w-80">
         <div className="text-3xl font-bold text-center">
           {isSignin ? "Sign in" : "Sign up"}
         </div>

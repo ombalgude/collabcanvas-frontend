@@ -109,7 +109,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white p-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white p-4 sm:p-8">
       <div className="max-w-3xl mx-auto space-y-8">
         <h1 className="text-4xl font-bold text-center text-purple-400">Dashboard</h1>
 
@@ -126,7 +126,7 @@ export default function Dashboard() {
           <Button
             onClick={handleCreateRoom}
             disabled={loading}
-            className="border border-white/20"
+            className="border border-white/20 w-full sm:w-auto"
           >
             Create Room
           </Button>
@@ -145,7 +145,7 @@ export default function Dashboard() {
           <Button
             onClick={handleJoinRoom}
             disabled={loading}
-            className="border border-white/20"
+            className="border border-white/20 w-full sm:w-auto"
           >
             Join Room
           </Button>

@@ -8,7 +8,7 @@ interface InputProps {
 
 export function Input({ placeholder, type, value, onChange, className = "" }: InputProps) {
   return (
-    <div className="p-2 m-2">
+    <div>
       <input
         className={`w-full p-2 border rounded bg-transparent text-white placeholder-white outline-none ${className}`}
         type={type}
@@ -19,3 +19,4 @@ export function Input({ placeholder, type, value, onChange, className = "" }: In
     </div>
   );
 }
+
